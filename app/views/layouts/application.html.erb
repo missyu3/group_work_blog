@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <% if logged_in? %>
+        <%= link_to "Blog", blogs_path %>
+        <%= "名前 : #{current_user.name}" %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to "Blog", new_session_path %>
+        <%= link_to "ユーザー作成", new_user_path %>
+        <%= link_to "ログイン", new_session_path %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
