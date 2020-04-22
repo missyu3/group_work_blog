@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :blogs
-  resources :users, only:[:new , :create]
+  resources :users, only:[:new , :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:index, :create, :destroy]
 end

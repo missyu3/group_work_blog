@@ -13,7 +13,7 @@
     <header>
       <% if logged_in? %>
         <%= link_to "Blog", blogs_path %>
-        <%= "名前 : #{current_user.name}" %>
+        <%= link_to "名前 : #{current_user.name}", user_path(current_user.id) %>
         <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
       <% else %>
         <%= link_to "Blog", new_session_path %>

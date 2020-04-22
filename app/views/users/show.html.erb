@@ -1,0 +1,6 @@
+<%= "#{@user.name}の部屋" %>
+  <%= @user.favorite_blogs.each do |f| %>
+  <%= f.user.name %>
+  <%= f.title %>
+  <%= f.content %>
+<% end %>
